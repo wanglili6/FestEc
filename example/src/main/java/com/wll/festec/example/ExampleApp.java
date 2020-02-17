@@ -1,4 +1,4 @@
-package com.wll.festec;
+package com.wll.festec.example;
 
 import android.app.Application;
 
