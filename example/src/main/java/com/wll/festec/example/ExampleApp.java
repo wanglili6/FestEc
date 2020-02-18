@@ -3,8 +3,10 @@ package com.wll.festec.example;
 import android.app.Application;
 
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
+import com.wll.festec.R;
 import com.wll.latte.app.Latte;
 import com.wll.latte.ec.icon.FontEcMoudle;
+import com.wll.latte.net.interceptors.DebugInterceptor;
 
 /**
  * @author wanglili
@@ -20,6 +22,7 @@ public class ExampleApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcMoudle())
                 .withApiHost("http://127.1.10/")
+                .withInterceptor(new DebugInterceptor("index", R.raw.test))
                 .configure();
     }
 }

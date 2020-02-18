@@ -12,19 +12,19 @@ import java.util.HashMap;
 public class Latte {
     //初始化Configurator
     public static Configurator init(Context context) {
-        getConfigurations().put(ConfigType.APPLATION_CONTEXT.name(), context.getApplicationContext());
+        getConfigurations().put(ConfigKeys.APPLATION_CONTEXT.name(), context.getApplicationContext());
         return Configurator.getInstance();
 
     }
 
     //获取存储信息的map
-    public static  HashMap<String, Object> getConfigurations() {
+    public static  HashMap<Object, Object> getConfigurations() {
         return Configurator.getInstance().getLatteConfigs();
     }
 
     //Context
     public static Context getApplicationContext() {
-        Object o = getConfigurations().get(ConfigType.APPLATION_CONTEXT.name());
+        Object o = getConfigurations().get(ConfigKeys.APPLATION_CONTEXT.name());
         return (Context) o;
     }
 }

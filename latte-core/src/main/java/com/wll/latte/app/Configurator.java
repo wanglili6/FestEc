@@ -6,6 +6,8 @@ import com.joanzapata.iconify.Iconify;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import okhttp3.Interceptor;
+
 /**
  * @author wanglili
  * @description: 管理类
@@ -14,18 +16,21 @@ import java.util.HashMap;
 public class Configurator {
     //创建一个存储信息的map
     //一开始是weakhasmap，据说weakhashhmap可以释放内存，不用的时候自行被回收
-    private static final HashMap<String, Object> LATTE_CONFIGS = new HashMap<>();
+    private static final HashMap<Object, Object> LATTE_CONFIGS = new HashMap<>();
     //存储字体图标
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
+    //拦截器的集合
+    private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
+
 
     private Configurator() {
         //设置初始化状态
-        //ConfigType.APPLATION_CONTEXT.name()  --获取枚举的字符串
-        LATTE_CONFIGS.put(ConfigType.APPLATION_CONTEXT.name(), false);
+        //ConfigKeys.APPLATION_CONTEXT.name()  --获取枚举的字符串
+        LATTE_CONFIGS.put(ConfigKeys.APPLATION_CONTEXT.name(), false);
     }
 
     //获取存储信息的map
-    final HashMap<String, Object> getLatteConfigs() {
+    final HashMap<Object, Object> getLatteConfigs() {
         return LATTE_CONFIGS;
     }
 
@@ -42,12 +47,12 @@ public class Configurator {
     //配置完成--configreay副职为true
     public final void configure() {
         initIcons();
-        LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(), true);
+        LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY.name(), true);
     }
 
     //配置api_HOSt
     public final Configurator withApiHost(String host) {
-        LATTE_CONFIGS.put(ConfigType.API_HOST.name(), host);
+        LATTE_CONFIGS.put(ConfigKeys.API_HOST.name(), host);
         return this;
     }
 
@@ -67,7 +72,7 @@ public class Configurator {
     //检查配置项是否完成
     private void checkConfigration() {
         //使变量变为不可变性
-        final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigType.CONFIG_READY.name());
+        final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigKeys.CONFIG_READY.name());
         if (!isReady) {
             //如果没有配置完成，抛出异常
             throw new RuntimeException("Configurator is not ready,call configure");
@@ -80,8 +85,24 @@ public class Configurator {
         return this;
     }
 
+    //配置拦截器
+    public final Configurator withInterceptor(Interceptor interceptor) {
+        INTERCEPTORS.add(interceptor);
+        //放到存储信息里
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR, INTERCEPTORS);
+        return this;
+    }
+
+    //配置拦截器
+    public final Configurator withInterceptor(ArrayList<Interceptor> interceptors) {
+        INTERCEPTORS.addAll(interceptors);
+        //放到存储信息里
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR, INTERCEPTORS);
+        return this;
+    }
+
     //调用检查
-    final <T> T getConfigration(Enum<ConfigType> key) {
+    final <T> T getConfigration(Enum<ConfigKeys> key) {
         checkConfigration();
         return (T) LATTE_CONFIGS.get(key.name());
     }
