@@ -11,9 +11,5 @@ import androidx.annotation.Nullable;
  * @date : 2020-02-16 16:59
  */
 public abstract class LatteDelegaret extends PermissionsCheckerDelegate {
-    @Override
-    public abstract Object setLayout();
 
-    @Override
-    public abstract void onBindView(@Nullable Bundle savedInstanceState, View rootView);
 }

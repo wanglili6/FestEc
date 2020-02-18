@@ -1,3 +1,15 @@
 R_DEF: Internal format may change without notice
 local
+drawable border_circle_timer
+id tv_launcher_timer
+layout delegate_launcher
+mipmap avatar
+mipmap ic_launcher
+mipmap ic_launcher_round
+mipmap launcher_00
+mipmap launcher_01
+mipmap launcher_02
+mipmap launcher_03
+mipmap launcher_04
+mipmap launcher_05
 string app_name
