@@ -3,6 +3,7 @@ package com.wll.latte.net;
 
 import com.wll.latte.app.ConfigKeys;
 import com.wll.latte.app.Latte;
+import com.wll.latte.net.rx.RxRestService;
 
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
@@ -20,18 +22,18 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 public class RestCreator {
 
-
-    public static RestService getRestService() {
-        return RestServiceHoldel.REST_SERVICE_CLINET;
-    }
-
+    /**
+     * 构建全局retrofit
+     */
     //单例创建retrofit请求
     private static final class RetrofitHoldel {
         //获取base_url
         private static final String BASE_URL = (String) Latte.getConfigurations().get(ConfigKeys.API_HOST.name());
         //创建Retrofit
         private static final Retrofit RETROFIT_CLINET = new Retrofit.Builder()
-                .baseUrl(BASE_URL).addConverterFactory(ScalarsConverterFactory.create())
+                .baseUrl(BASE_URL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(OKHttpHolder.OK_HTTP_CLIENT_CLINET)//记载okhttp
                 .build();
     }
@@ -62,7 +64,7 @@ public class RestCreator {
     }
 
     /**
-     * 加载retrofit的实现接口restservice
+     * 加载retrofit的实现接口Restservice
      */
     private static final class RestServiceHoldel {
         //创建Retrofit
@@ -70,10 +72,11 @@ public class RestCreator {
                 RetrofitHoldel.RETROFIT_CLINET.create(RestService.class);
     }
 
+    public static RestService getRestService() {
+        return RestServiceHoldel.REST_SERVICE_CLINET;
+    }
 
-    /**
-     * 加载retrofit的实现接口restservice
-     */
+
     private static final class ParamsHoler {
         //全局参数
         public static final WeakHashMap<String, Object> PARAMS = new WeakHashMap<>();
@@ -81,5 +84,19 @@ public class RestCreator {
 
     public static WeakHashMap<String, Object> getParams() {
         return ParamsHoler.PARAMS;
+    }
+
+
+    /**
+     * rxService
+     */
+    private static final class RxRestServiceHoldel {
+        //创建Retrofit
+        private static final RxRestService REST_SERVICE_CLINET =
+                RetrofitHoldel.RETROFIT_CLINET.create(RxRestService.class);
+    }
+
+    public static RxRestService getRxRestService() {
+        return RxRestServiceHoldel.REST_SERVICE_CLINET;
     }
 }
