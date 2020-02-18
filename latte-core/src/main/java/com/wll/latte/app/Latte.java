@@ -18,7 +18,7 @@ public class Latte {
     }
 
     //获取存储信息的map
-    private static HashMap<String, Object> getConfigurations() {
+    public static  HashMap<String, Object> getConfigurations() {
         return Configurator.getInstance().getLatteConfigs();
     }
 
