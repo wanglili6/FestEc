@@ -24,6 +24,9 @@ public class RestClientBuilder {
     private String mUrl;//地址
     private static final Map<String, Object> PARAMS = RestCreator.getParams();//是内存的管理更合理，再不用的的时候回收
     private IRequest mIrequest;//请求回调
+    private  String mDownloadDir;//下载存放目录
+    private  String mExtesion;//后缀名
+    private  String mName;//文件名字
     private ISuccess mISuccess;//成功回调
     private IFailure mIFailure;//请求失败
     private IError mIError;//请求返回错误
@@ -66,6 +69,20 @@ public class RestClientBuilder {
     //file
     public final RestClientBuilder file(String filepath) {
         this.mFile = new File(filepath);
+        return this;
+
+    }
+
+    //文件存放目录
+    public final RestClientBuilder dir(String dir) {
+        this.mDownloadDir = dir;
+        return this;
+
+    }
+
+    //后缀名
+    public final RestClientBuilder extesion(String extesion) {
+        this.mExtesion = extesion;
         return this;
 
     }
@@ -128,7 +145,7 @@ public class RestClientBuilder {
 
     //构建
     public final RestClient build() {
-        return new RestClient(mUrl, PARAMS, mIrequest, mISuccess, mIFailure, mIError, mBody,mFile, mContext, mLoaderstyle);
+        return new RestClient(mUrl, PARAMS, mIrequest,mDownloadDir,mExtesion,mName, mISuccess, mIFailure, mIError, mBody,mFile, mContext, mLoaderstyle);
 
     }
 

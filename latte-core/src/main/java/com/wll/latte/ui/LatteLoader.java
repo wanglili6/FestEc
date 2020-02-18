@@ -9,11 +9,9 @@ import androidx.appcompat.app.AppCompatDialog;
 
 import com.wang.avi.AVLoadingIndicatorView;
 import com.wll.latte.R;
-import com.wll.latte.util.DimenUtil;
+import com.wll.latte.util.Dimen.DimenUtil;
 
 import java.util.ArrayList;
-
-import retrofit2.http.FieldMap;
 
 /**
  * @author wanglili

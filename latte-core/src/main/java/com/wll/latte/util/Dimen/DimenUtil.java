@@ -1,4 +1,4 @@
-package com.wll.latte.util;
+package com.wll.latte.util.Dimen;
 
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
@@ -16,7 +16,7 @@ public class DimenUtil {
      * @return
      */
     public static int getScreeWidth(){
-      final   Resources resources = Latte.getApplication().getResources();
+      final   Resources resources = Latte.getApplicationContext().getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         return displayMetrics.widthPixels;
     }
@@ -26,7 +26,7 @@ public class DimenUtil {
      * @return
      */
     public static int getScreeHeight(){
-        final   Resources resources = Latte.getApplication().getResources();
+        final   Resources resources = Latte.getApplicationContext().getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         return displayMetrics.heightPixels;
     }
