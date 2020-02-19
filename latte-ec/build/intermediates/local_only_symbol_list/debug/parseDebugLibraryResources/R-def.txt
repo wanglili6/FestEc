@@ -1,6 +1,8 @@
 R_DEF: Internal format may change without notice
 local
 drawable border_circle_timer
+drawable dot_focus
+drawable dot_normal
 id tv_launcher_timer
 layout delegate_launcher
 mipmap avatar

@@ -6,7 +6,7 @@ import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
 import com.wll.latte.net.callback.IRequest;
 import com.wll.latte.net.callback.ISuccess;
-import com.wll.latte.ui.LoaderStyle;
+import com.wll.latte.ui.loader.LoaderStyle;
 
 import java.io.File;
 import java.util.Map;

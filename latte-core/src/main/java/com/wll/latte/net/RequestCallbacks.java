@@ -6,11 +6,10 @@ import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
 import com.wll.latte.net.callback.IRequest;
 import com.wll.latte.net.callback.ISuccess;
-import com.wll.latte.ui.LatteLoader;
-import com.wll.latte.ui.LoaderStyle;
+import com.wll.latte.ui.loader.LatteLoader;
+import com.wll.latte.ui.loader.LoaderStyle;
 
 
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -10,14 +10,6 @@ import androidx.annotation.Nullable;
  * @description: 检测动态权限
  * @date : 2020-02-16 16:58
  */
-public class PermissionsCheckerDelegate extends BaseDelegates {
-    @Override
-    public Object setLayout() {
-        return null;
-    }
+public abstract class PermissionsCheckerDelegate extends BaseDelegates {
 
-    @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-
-    }
 }

@@ -1,4 +1,4 @@
-package com.wll.latte.ui;
+package com.wll.latte.ui.loader;
 
 /**
  * @author wanglili

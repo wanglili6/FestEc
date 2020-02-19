@@ -67,7 +67,9 @@ dependencies {
     api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
 
     //banner依赖
-    api 'com.bigkoo:convenientbanner:2.1.5'
+    api 'com.bigkoo:convenientbanner:2.0.5'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+
     //json
     api 'com.alibaba:fastjson:1.2.62'
 
