@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.ContentFrameLayout;
 
 import com.wll.latte.R;
@@ -24,6 +25,10 @@ public abstract class ProxyActivity extends SupportActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        if (null != actionBar) {
+            actionBar.hide();
+        }
         //初始化视图
         initContainer(savedInstanceState);
     }

@@ -10,6 +10,8 @@ import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.wll.latte.delegates.LatteDelegaret;
 import com.wll.latte.ec.R;
 import com.wll.latte.ui.launcher.LauncherHolderCreator;
+import com.wll.latte.ui.launcher.ScrollLauncherTag;
+import com.wll.latte.util.storage.LattePreference;
 
 import java.util.ArrayList;
 
@@ -40,8 +42,8 @@ public class LauncherScrollDelegate extends LatteDelegaret implements OnItemClic
         INTEGERS.add(R.mipmap.launcher_04);
         INTEGERS.add(R.mipmap.launcher_05);
         mConvenientBanner
-                .setPages(new LauncherHolderCreator(),INTEGERS)
-                .setPageIndicator(new int[]{R.drawable.dot_normal,R.drawable.dot_focus})
+                .setPages(new LauncherHolderCreator(), INTEGERS)
+                .setPageIndicator(new int[]{R.drawable.dot_normal, R.drawable.dot_focus})
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL)
                 .setOnItemClickListener(this)
                 .setCanLoop(true);
@@ -50,6 +52,11 @@ public class LauncherScrollDelegate extends LatteDelegaret implements OnItemClic
 
     @Override
     public void onItemClick(int position) {
+        if (position == INTEGERS.size() - 1) {
+            //点击的是最后一个，增加一个标记
+            LattePreference.setAppFlag(ScrollLauncherTag.HAS_DIRST_LAUNCHER_APP.name(), true);
+            //检查是否登录
+        }
 
     }
 }
