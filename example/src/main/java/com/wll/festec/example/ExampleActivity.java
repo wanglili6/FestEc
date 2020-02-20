@@ -49,7 +49,7 @@ public class ExampleActivity extends ProxyActivity implements ISignListener, ILa
                 break;
             case NOT_SIGNED:
                 Toast.makeText(this, "用户没有登录", Toast.LENGTH_SHORT).show();
-                startWithPop(new SignUpDelegate());
+                startWithPop(new SignInDelegate());
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + tag);

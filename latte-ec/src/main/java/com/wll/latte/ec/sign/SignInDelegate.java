@@ -129,6 +129,7 @@ public class SignInDelegate extends LatteDelegaret {
 
         } else if (id == R.id.icon_sign_in_wechat) {
             //微信登录
+
         }
     }
 
