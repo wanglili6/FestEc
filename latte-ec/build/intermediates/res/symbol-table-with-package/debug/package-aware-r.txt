@@ -1169,6 +1169,8 @@ id dialog_button
 id disableHome
 id dropdown
 id edit_query
+id edit_sign_in_email
+id edit_sign_in_pwd
 id edit_sign_up_email
 id edit_sign_up_name
 id edit_sign_up_phone
@@ -1190,6 +1192,7 @@ id home
 id homeAsUp
 id icon
 id icon_group
+id icon_sign_in_wechat
 id ifRoom
 id image
 id info
@@ -1366,6 +1369,7 @@ layout abc_simple_dropdown_hint
 layout abc_tooltip
 layout custom_dialog
 layout delegate_launcher
+layout delegate_sign_in
 layout delegate_sign_up
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

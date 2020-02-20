@@ -19,7 +19,7 @@ public class SignUpDelegate_ViewBinding implements Unbinder {
 
   private View view46d;
 
-  private View view50f;
+  private View view512;
 
   @UiThread
   public SignUpDelegate_ViewBinding(final SignUpDelegate target, View source) {
@@ -42,7 +42,7 @@ public class SignUpDelegate_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.tv_to_sign_in, "field 'tvToSignIn' and method 'onViewClicked'");
     target.tvToSignIn = Utils.castView(view, R.id.tv_to_sign_in, "field 'tvToSignIn'", AppCompatTextView.class);
-    view50f = view;
+    view512 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -68,7 +68,7 @@ public class SignUpDelegate_ViewBinding implements Unbinder {
 
     view46d.setOnClickListener(null);
     view46d = null;
-    view50f.setOnClickListener(null);
-    view50f = null;
+    view512.setOnClickListener(null);
+    view512 = null;
   }
 }

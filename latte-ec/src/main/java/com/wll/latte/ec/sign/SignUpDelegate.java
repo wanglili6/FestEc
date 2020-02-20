@@ -120,6 +120,8 @@ public class SignUpDelegate extends LatteDelegaret {
 
             }
         } else if (id == R.id.tv_to_sign_in) {
+            //去登录
+            start(new SignInDelegate());
         }
     }
 }

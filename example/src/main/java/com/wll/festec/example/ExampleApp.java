@@ -8,6 +8,9 @@ import com.wll.latte.app.Latte;
 import com.wll.latte.ec.icon.FontEcMoudle;
 import com.wll.latte.net.interceptors.DebugInterceptor;
 
+import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.unit.Subunits;
+
 /**
  * @author wanglili
  * @description:
@@ -24,5 +27,8 @@ public class ExampleApp extends Application {
                 .withApiHost("http://127.1.10/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.test))
                 .configure();
+
+        AutoSizeConfig.getInstance().getUnitsManager()
+                .setSupportSubunits(Subunits.MM);
     }
 }
