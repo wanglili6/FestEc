@@ -1,5 +1,6 @@
 package com.wll.latte.ec.launcher;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -9,7 +10,11 @@ import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.wll.latte.delegates.LatteDelegaret;
 import com.wll.latte.ec.R;
+import com.wll.latte.ec.sign.AccountManager;
+import com.wll.latte.ec.sign.IUserChecker;
+import com.wll.latte.ui.launcher.ILauncherListenner;
 import com.wll.latte.ui.launcher.LauncherHolderCreator;
+import com.wll.latte.ui.launcher.OnLauncherFinishTag;
 import com.wll.latte.ui.launcher.ScrollLauncherTag;
 import com.wll.latte.util.storage.LattePreference;
 
@@ -35,6 +40,15 @@ public class LauncherScrollDelegate extends LatteDelegaret implements OnItemClic
         initBanner();
     }
 
+
+    private ILauncherListenner mILauncherListenner;
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ILauncherListenner) {
+            mILauncherListenner = (ILauncherListenner) activity;
+        }
+    }
     private void initBanner() {
         INTEGERS.add(R.mipmap.launcher_01);
         INTEGERS.add(R.mipmap.launcher_02);
@@ -56,6 +70,22 @@ public class LauncherScrollDelegate extends LatteDelegaret implements OnItemClic
             //点击的是最后一个，增加一个标记
             LattePreference.setAppFlag(ScrollLauncherTag.HAS_DIRST_LAUNCHER_APP.name(), true);
             //检查是否登录
+            //检查用户是否登录
+            AccountManager.checkAccount(new IUserChecker() {
+                @Override
+                public void onSignIn() {
+                    if (null != mILauncherListenner) {
+                        mILauncherListenner.onLauncherFinish(OnLauncherFinishTag.SIGNED);
+                    }
+                }
+
+                @Override
+                public void onNotSignIn() {
+                    if (null != mILauncherListenner) {
+                        mILauncherListenner.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+                    }
+                }
+            });
         }
 
     }

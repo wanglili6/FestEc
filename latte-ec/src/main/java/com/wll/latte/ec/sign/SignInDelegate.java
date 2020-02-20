@@ -1,5 +1,6 @@
 package com.wll.latte.ec.sign;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -14,6 +15,10 @@ import com.joanzapata.iconify.widget.IconTextView;
 import com.wll.latte.delegates.LatteDelegaret;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
+import com.wll.latte.net.RestClient;
+import com.wll.latte.net.callback.IError;
+import com.wll.latte.net.callback.IFailure;
+import com.wll.latte.net.callback.ISuccess;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -36,6 +41,15 @@ public class SignInDelegate extends LatteDelegaret {
     AppCompatTextView tvToSignUp;
     @BindView(R2.id.icon_sign_in_wechat)
     IconTextView iconSignInWechat;
+    private ISignListener mISignListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ISignListener) {
+            mISignListener = (ISignListener) activity;
+        }
+    }
 
     @Override
     public Object setLayout() {
@@ -82,7 +96,32 @@ public class SignInDelegate extends LatteDelegaret {
         if (id == R.id.btn_sign_in) {
             //登录
             if (checkForm()) {
-                Toast.makeText(getContext(), "验证通过", Toast.LENGTH_SHORT).show();
+                RestClient.builder()
+                        .url("http://mock.fulingjie.com/mock/data/user_profile.json")
+                        .params("name", editSignInEmail.getText().toString())
+                        .params("password", editSignInPwd.getText().toString())
+                        .loader(getContext())
+                        .success(new ISuccess() {
+                            @Override
+                            public void onSuccess(String response) {
+                                SignHandler.onSignIn(response, mISignListener);
+                            }
+                        })
+                        .failure(new IFailure() {
+                            @Override
+                            public void onFailure() {
+                                Toast.makeText(getContext(), "onFailure", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .error(new IError() {
+                            @Override
+                            public void onError(int code, String msg) {
+                                Toast.makeText(getContext(), "onError", Toast.LENGTH_SHORT).show();
+
+                            }
+                        })
+                        .build()
+                        .post();
             }
         } else if (id == R.id.tv_to_sign_up) {
             //去注册

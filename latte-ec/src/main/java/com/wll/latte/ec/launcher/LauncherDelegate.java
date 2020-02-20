@@ -1,5 +1,6 @@
 package com.wll.latte.ec.launcher;
 
+import android.app.Activity;
 import android.icu.text.MessageFormat;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +12,10 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.wll.latte.delegates.LatteDelegaret;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
+import com.wll.latte.ec.sign.AccountManager;
+import com.wll.latte.ec.sign.IUserChecker;
+import com.wll.latte.ui.launcher.ILauncherListenner;
+import com.wll.latte.ui.launcher.OnLauncherFinishTag;
 import com.wll.latte.ui.launcher.ScrollLauncherTag;
 import com.wll.latte.util.storage.LattePreference;
 import com.wll.latte.util.timer.BaseTimerTask;
@@ -36,6 +41,7 @@ public class LauncherDelegate extends LatteDelegaret implements ITimerListener {
 
     private int mCount = 5;
 
+
     @Override
     public Object setLayout() {
         return R.layout.delegate_launcher;
@@ -44,6 +50,14 @@ public class LauncherDelegate extends LatteDelegaret implements ITimerListener {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
         initTimer();
+    }
+    private ILauncherListenner mILauncherListenner;
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ILauncherListenner) {
+            mILauncherListenner = (ILauncherListenner) activity;
+        }
     }
 
     /**
@@ -55,6 +69,21 @@ public class LauncherDelegate extends LatteDelegaret implements ITimerListener {
             start(new LauncherScrollDelegate(), SINGLETASK);
         } else {
             //检查用户是否登录
+            AccountManager.checkAccount(new IUserChecker() {
+                @Override
+                public void onSignIn() {
+                    if (null != mILauncherListenner) {
+                        mILauncherListenner.onLauncherFinish(OnLauncherFinishTag.SIGNED);
+                    }
+                }
+
+                @Override
+                public void onNotSignIn() {
+                    if (null != mILauncherListenner) {
+                        mILauncherListenner.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+                    }
+                }
+            });
         }
     }
 

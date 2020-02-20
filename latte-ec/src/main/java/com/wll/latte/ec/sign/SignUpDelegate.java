@@ -1,6 +1,7 @@
 package com.wll.latte.ec.sign;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -45,6 +46,15 @@ public class SignUpDelegate extends LatteDelegaret {
     Button btnSignUp;
     @BindView(R2.id.tv_to_sign_in)
     AppCompatTextView tvToSignIn;
+    private ISignListener mISignListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ISignListener){
+            mISignListener = (ISignListener) activity;
+        }
+    }
 
     @Override
     public Object setLayout() {
@@ -108,8 +118,8 @@ public class SignUpDelegate extends LatteDelegaret {
     public void onViewClicked(View view) {
         int id = view.getId();
         if (id == R.id.btn_sign_up) {
-//            if (checkForm()) {
-//                    //验证通过
+            if (checkForm()) {
+                    //验证通过
             RestClient.builder()
                     .url("http://mock.fulingjie.com/mock/data/user_profile.json")
                     .params("name", editSignUpName.getText().toString())
@@ -120,8 +130,9 @@ public class SignUpDelegate extends LatteDelegaret {
                     .success(new ISuccess() {
                         @Override
                         public void onSuccess(String response) {
-                            Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
-                            SignHandler.onSignUP(response);
+//                            Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
+                            SignHandler.onSignUP(response,mISignListener);
+
                         }
                     })
                     .failure(new IFailure() {
@@ -139,7 +150,7 @@ public class SignUpDelegate extends LatteDelegaret {
                     })
                     .build()
                     .post();
-//            }
+            }
         } else if (id == R.id.tv_to_sign_in) {
             //去登录
             start(new SignInDelegate());
