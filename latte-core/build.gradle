@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -76,6 +77,11 @@ dependencies {
 
     //今日头条的适配方式
     api 'me.jessyan:autosize:1.1.2'
+
+    //logger
+    api 'com.orhanobut:logger:2.2.0'
+    //greendao
+    api 'org.greenrobot:greendao:3.2.2'
 
 
 }

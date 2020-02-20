@@ -3,45 +3,45 @@
 3    package="com.wll.latte.ec.test" >
 4
 5    <uses-sdk
-5-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:5:5-74
+5-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:5:5-74
 6        android:minSdkVersion="19"
-6-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:5:15-41
+6-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:5:15-41
 7        android:targetSdkVersion="29" />
-7-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:5:42-71
+7-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:5:42-71
 8
 9    <instrumentation
-9-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:11:5-15:71
+9-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:11:5-15:71
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:11:22-76
+10-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:11:22-76
 11        android:functionalTest="false"
-11-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:14:22-52
+11-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:14:22-52
 12        android:handleProfiling="false"
-12-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:13:22-53
+12-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:13:22-53
 13        android:label="Tests for com.wll.latte.ec.test"
-13-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:15:22-69
+13-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:15:22-69
 14        android:targetPackage="com.wll.latte.ec.test" />
-14-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:12:22-67
+14-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:12:22-67
 15
 16    <application
-16-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:7:5-9:19
+16-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:7:5-9:19
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-17-->[androidx.core:core:1.1.0] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/8a22100e853741c29cf03c400ba6fc9a/core-1.1.0/AndroidManifest.xml:24:18-86
+17-->[androidx.core:core:1.1.0] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/cda9747cffaf3b669cfae22bcef4c320/core-1.1.0/AndroidManifest.xml:24:18-86
 18        android:debuggable="true" >
-18-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:7:18-43
+18-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:7:18-43
 19        <uses-library android:name="android.test.runner" />
-19-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:8:9-60
-19-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6211667017113702523.xml:8:23-57
+19-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:8:9-60
+19-->/Users/wanglili/work/wllwoork/FestEc/latte-ec/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5355618737382072830.xml:8:23-57
 20
 21        <provider
-21-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/43227ba598c07d5834c5163d4153e744/jetified-autosize-1.1.2/AndroidManifest.xml:12:9-16:43
+21-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/b427de439a621813caa83be1c21fe01e/jetified-autosize-1.1.2/AndroidManifest.xml:12:9-16:43
 22            android:name="me.jessyan.autosize.InitProvider"
-22-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/43227ba598c07d5834c5163d4153e744/jetified-autosize-1.1.2/AndroidManifest.xml:13:13-60
+22-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/b427de439a621813caa83be1c21fe01e/jetified-autosize-1.1.2/AndroidManifest.xml:13:13-60
 23            android:authorities="com.wll.latte.ec.test.autosize-init-provider"
-23-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/43227ba598c07d5834c5163d4153e744/jetified-autosize-1.1.2/AndroidManifest.xml:14:13-74
+23-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/b427de439a621813caa83be1c21fe01e/jetified-autosize-1.1.2/AndroidManifest.xml:14:13-74
 24            android:exported="false"
-24-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/43227ba598c07d5834c5163d4153e744/jetified-autosize-1.1.2/AndroidManifest.xml:15:13-37
+24-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/b427de439a621813caa83be1c21fe01e/jetified-autosize-1.1.2/AndroidManifest.xml:15:13-37
 25            android:multiprocess="true" />
-25-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/43227ba598c07d5834c5163d4153e744/jetified-autosize-1.1.2/AndroidManifest.xml:16:13-40
+25-->[me.jessyan:autosize:1.1.2] /Users/wanglili/.gradle/caches/transforms-2/files-2.1/b427de439a621813caa83be1c21fe01e/jetified-autosize-1.1.2/AndroidManifest.xml:16:13-40
 26    </application>
 27
 28</manifest>

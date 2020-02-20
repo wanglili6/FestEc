@@ -2,6 +2,7 @@ package com.wll.latte.ec.sign;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,10 @@ import com.wll.latte.delegates.LatteDelegaret;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
 import com.wll.latte.net.RestClient;
+import com.wll.latte.net.callback.IError;
+import com.wll.latte.net.callback.IFailure;
 import com.wll.latte.net.callback.ISuccess;
+import com.wll.latte.util.log.LatteLogger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -104,21 +108,38 @@ public class SignUpDelegate extends LatteDelegaret {
     public void onViewClicked(View view) {
         int id = view.getId();
         if (id == R.id.btn_sign_up) {
-            if (checkForm()) {
+//            if (checkForm()) {
 //                    //验证通过
-//                    RestClient.builder().url("sign_up")
-//                            .params("", "")
-//                            .success(new ISuccess() {
-//                                @Override
-//                                public void onSuccess(String response) {
-//
-//                                }
-//                            }).build()
-//                            .post();
-                Toast.makeText(Latte.getApplicationContext(), "验证通过", Toast.LENGTH_SHORT).show();
-            } else {
+            RestClient.builder()
+                    .url("http://mock.fulingjie.com/mock/data/user_profile.json")
+                    .params("name", editSignUpName.getText().toString())
+                    .params("email", editSignUpEmail.getText().toString())
+                    .params("phone", editSignUpPhone.getText().toString())
+                    .params("password", editSignUpPwd.getText().toString())
+                    .loader(getContext())
+                    .success(new ISuccess() {
+                        @Override
+                        public void onSuccess(String response) {
+                            Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
+                            SignHandler.onSignUP(response);
+                        }
+                    })
+                    .failure(new IFailure() {
+                        @Override
+                        public void onFailure() {
+                            Toast.makeText(getContext(), "onFailure", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .error(new IError() {
+                        @Override
+                        public void onError(int code, String msg) {
+                            Toast.makeText(getContext(), "onError", Toast.LENGTH_SHORT).show();
 
-            }
+                        }
+                    })
+                    .build()
+                    .post();
+//            }
         } else if (id == R.id.tv_to_sign_in) {
             //去登录
             start(new SignInDelegate());

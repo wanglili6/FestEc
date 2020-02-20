@@ -29,4 +29,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     api project(path: ':latte-ec')
     annotationProcessor project(path: ':latte-compiler')
+    //stetho 抽象可以查看数据
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
 }

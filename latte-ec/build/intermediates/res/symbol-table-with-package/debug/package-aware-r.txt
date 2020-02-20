@@ -1141,6 +1141,7 @@ id auto
 id beginning
 id blocking
 id bottom
+id btn_sign_in
 id btn_sign_up
 id buttonPanel
 id cancel_action
@@ -1307,6 +1308,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tv_launcher_timer
 id tv_to_sign_in
+id tv_to_sign_up
 id uniform
 id unlabeled
 id up

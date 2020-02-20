@@ -3,6 +3,7 @@ local
 drawable border_circle_timer
 drawable dot_focus
 drawable dot_normal
+id btn_sign_in
 id btn_sign_up
 id edit_sign_in_email
 id edit_sign_in_pwd
@@ -14,6 +15,7 @@ id edit_sign_up_re_pwd
 id icon_sign_in_wechat
 id tv_launcher_timer
 id tv_to_sign_in
+id tv_to_sign_up
 layout delegate_launcher
 layout delegate_sign_in
 layout delegate_sign_up
