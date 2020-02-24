@@ -4,6 +4,12 @@
     package="com.wll.festec">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- for mta statistics, not necessary-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".example.ExampleApp"
         android:allowBackup="true"
@@ -13,6 +19,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <!-- 屏幕适配-头条适配 -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_heigth_in_dp"
+            android:value="667" />
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.2" />
+
         <activity android:name=".example.ExampleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,16 +38,20 @@
             </intent-filter>
         </activity>
 
-        <!-- 屏幕适配-头条适配 -->
-        <meta-data
-            android:name="design_width_in_dp"
-            android:value="360" />
-        <meta-data
-            android:name="design_heigth_in_dp"
-            android:value="640" />
-        <meta-data
-            android:name="android.max_aspect"
-            android:value="2.2" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="微信回调"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 

@@ -11,5 +11,8 @@ public enum ConfigKeys {
     CONFIG_READY,//初始化是否完成
     ICON,//存储字体
     INTERCEPTOR,//拦截起
+    WE_CHAT_APPID,//wxAPPID
+    WE_CHAT_APP_SECIET,//
+    ACTIVITY,//
 
 }

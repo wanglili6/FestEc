@@ -2,6 +2,18 @@
 <resources>
     <item name="delegate_container" type="id"/>
     <string name="app_name">latte</string>
+    <style name="Theme.AppCompat.Translucent">
+        <!--去掉标题栏-->
+        <item name="android:windowNoTitle">true</item>
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--背景缓存颜色空-->
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 弹出或者进入时的动画效果 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
     <style name="dialog" parent="Theme.AppCompat.Dialog">
         <!--去掉边框-->
         <item name="android:windowFrame">@null</item>

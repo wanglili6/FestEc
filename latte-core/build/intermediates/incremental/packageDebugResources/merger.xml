@@ -15,4 +15,15 @@
         
         <item name="android:windowFullscreen">true</item>
 
+    </style><style name="Theme.AppCompat.Translucent">
+        
+        <item name="android:windowNoTitle">true</item>
+        
+        <item name="android:windowBackground">@android:color/transparent</item>
+        
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        
+        <item name="android:windowIsTranslucent">true</item>
+        
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style></file></source><source path="/Users/wanglili/work/wllwoork/FestEc/latte-core/build/generated/res/rs/debug"/><source path="/Users/wanglili/work/wllwoork/FestEc/latte-core/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/wanglili/work/wllwoork/FestEc/latte-core/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/wanglili/work/wllwoork/FestEc/latte-core/src/debug/res"/></dataSet><mergedItems/></merger>

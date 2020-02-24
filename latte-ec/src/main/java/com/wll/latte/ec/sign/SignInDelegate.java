@@ -19,6 +19,8 @@ import com.wll.latte.net.RestClient;
 import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
 import com.wll.latte.net.callback.ISuccess;
+import com.wll.latte.wechat.LatteWeChat;
+import com.wll.latte.wechat.callbacks.IWechatSignInCallback;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -129,6 +131,12 @@ public class SignInDelegate extends LatteDelegaret {
 
         } else if (id == R.id.icon_sign_in_wechat) {
             //微信登录
+            LatteWeChat.getInstance().onSignInSuccess(new IWechatSignInCallback() {
+                @Override
+                public void onSignInSuccess(String userInfo) {
+
+                }
+            }).signIn();
 
         }
     }

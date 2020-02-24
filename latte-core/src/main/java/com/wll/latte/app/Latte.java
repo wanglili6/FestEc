@@ -18,13 +18,23 @@ public class Latte {
     }
 
     //获取存储信息的map
-    public static  HashMap<Object, Object> getConfigurations() {
+    public static HashMap<Object, Object> getConfigurations() {
         return Configurator.getInstance().getLatteConfigs();
+    }
+
+    //获取存储信息的map
+    public static Object getConfigurations(Enum<ConfigKeys> key) {
+        return Configurator.getInstance().getLatteConfigs().get(key.name());
     }
 
     //Context
     public static Context getApplicationContext() {
         Object o = getConfigurations().get(ConfigKeys.APPLATION_CONTEXT.name());
         return (Context) o;
+    }
+
+    //Context
+    public static Configurator getConfigurator() {
+        return Configurator.getInstance();
     }
 }

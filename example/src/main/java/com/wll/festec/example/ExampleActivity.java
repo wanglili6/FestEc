@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 
 import com.wll.latte.activitys.ProxyActivity;
+import com.wll.latte.app.Latte;
 import com.wll.latte.delegates.LatteDelegaret;
 import com.wll.latte.ec.launcher.LauncherDelegate;
 import com.wll.latte.ec.sign.ISignListener;
@@ -23,6 +24,9 @@ public class ExampleActivity extends ProxyActivity implements ISignListener, ILa
         if (null != actionBar) {
             actionBar.hide();
         }
+        //加入配置文件
+        Latte.getConfigurator().withActivity(this);
+
     }
 
     @Override

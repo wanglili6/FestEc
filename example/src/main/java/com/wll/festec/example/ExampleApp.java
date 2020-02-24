@@ -30,6 +30,8 @@ public class ExampleApp extends Application {
                 .withIcon(new FontEcMoudle())
                 .withApiHost("http://127.0.0.1/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.test))
+                .withWeChatAppId("")
+                .withWeChatSecret("")
                 .configure();
         //今日头条适配
         AutoSizeConfig.getInstance().getUnitsManager()
