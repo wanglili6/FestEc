@@ -1138,6 +1138,8 @@ id auto
 id beginning
 id blocking
 id bottom
+id bottom_bar
+id bottom_bar_delegate_container
 id buttonPanel
 id cancel_action
 id cbLoopViewPager
@@ -1180,6 +1182,7 @@ id hierarchy
 id home
 id homeAsUp
 id icon
+id icon_bottom_item
 id icon_group
 id ifRoom
 id image
@@ -1293,6 +1296,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_bottom_item
 id uniform
 id unlabeled
 id up
@@ -1353,7 +1357,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_simple_dropdown_hint
 layout abc_tooltip
+layout bottom_item_icon_text_layout
 layout custom_dialog
+layout delegate_bottom
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

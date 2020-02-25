@@ -1,6 +1,5 @@
 package com.wll.latte.bottom;
 
-import android.icu.util.ValueIterator;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;

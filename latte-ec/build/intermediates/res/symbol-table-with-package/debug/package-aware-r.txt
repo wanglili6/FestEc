@@ -1141,6 +1141,8 @@ id auto
 id beginning
 id blocking
 id bottom
+id bottom_bar
+id bottom_bar_delegate_container
 id btn_sign_in
 id btn_sign_up
 id buttonPanel
@@ -1192,6 +1194,7 @@ id hierarchy
 id home
 id homeAsUp
 id icon
+id icon_bottom_item
 id icon_group
 id icon_sign_in_wechat
 id ifRoom
@@ -1306,6 +1309,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_bottom_item
 id tv_launcher_timer
 id tv_to_sign_in
 id tv_to_sign_up
@@ -1369,10 +1373,17 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_simple_dropdown_hint
 layout abc_tooltip
+layout bottom_item_icon_text_layout
 layout custom_dialog
+layout delegate_bottom
+layout delegate_compass
+layout delegate_index
 layout delegate_launcher
+layout delegate_shopping_cart
 layout delegate_sign_in
 layout delegate_sign_up
+layout delegate_sort
+layout delegate_user
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
