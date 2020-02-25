@@ -71,7 +71,7 @@ dependencies {
     api 'androidx.recyclerview:recyclerview:1.1.0'
 
     //json
-    api 'com.alibaba:fastjson:1.2.62'
+    api 'com.alibaba:fastjson:1.1.71.android'
     //noinspection GradleCompatible
     api 'com.android.support:design:28.0.0'
 
@@ -83,6 +83,9 @@ dependencies {
     api 'org.greenrobot:greendao:3.2.2'
     //微信依赖
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+    //RecyclerView依赖
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0-beta9'
 
 }
 

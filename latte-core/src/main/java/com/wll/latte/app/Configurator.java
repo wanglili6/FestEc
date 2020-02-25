@@ -1,6 +1,7 @@
 package com.wll.latte.app;
 
 import android.app.Activity;
+import android.os.Handler;
 
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
@@ -24,11 +25,13 @@ public class Configurator {
     //拦截器的集合
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
+    private static final Handler HANDLER = new Handler();
 
     private Configurator() {
         //设置初始化状态
         //ConfigKeys.APPLATION_CONTEXT.name()  --获取枚举的字符串
         LATTE_CONFIGS.put(ConfigKeys.APPLATION_CONTEXT.name(), false);
+        LATTE_CONFIGS.put(ConfigKeys.HANDLER.name(), HANDLER);
     }
 
     //获取存储信息的map

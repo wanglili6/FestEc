@@ -812,6 +812,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen def_height
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -862,6 +863,9 @@ dimen dialog_fixed_width_major
 dimen dialog_fixed_width_minor
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen dp_10
+dimen dp_4
+dimen dp_40
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -938,6 +942,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen sp_14
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
@@ -1045,6 +1050,8 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable border_circle_timer
+drawable brvah_sample_footer_loading
+drawable brvah_sample_footer_loading_progress
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1080,6 +1087,10 @@ drawable shadow_left
 drawable shadow_right
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+id BaseQuickAdapter_databinding_support
+id BaseQuickAdapter_dragging_support
+id BaseQuickAdapter_swiping_support
+id BaseQuickAdapter_viewholder_support
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1159,6 +1170,7 @@ id contentPanel
 id coordinator
 id custom
 id customPanel
+id dataBinding
 id decor_content_parent
 id default_activity_button
 id delegate_container
@@ -1196,6 +1208,8 @@ id homeAsUp
 id icon
 id icon_bottom_item
 id icon_group
+id icon_index_messages
+id icon_index_scan
 id icon_sign_in_wechat
 id ifRoom
 id image
@@ -1212,6 +1226,12 @@ id line3
 id listMode
 id list_item
 id loPageTurningPoint
+id load_more_load_complete_view
+id load_more_load_end_view
+id load_more_load_fail_view
+id load_more_loading_view
+id loading_progress
+id loading_text
 id masked
 id media_actions
 id message
@@ -1227,6 +1247,8 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id onAttachStateChangeListener
+id onDateChanged
 id outline
 id packed
 id parallax
@@ -1241,6 +1263,7 @@ id radio
 id right
 id right_icon
 id right_side
+id rv_index
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1275,6 +1298,7 @@ id spread_inside
 id src_atop
 id src_in
 id src_over
+id srl_index
 id start
 id status_bar_latest_event_content
 id stretch
@@ -1293,6 +1317,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textWatcher
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1310,7 +1335,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tv_bottom_item
+id tv_index
 id tv_launcher_timer
+id tv_prompt
 id tv_to_sign_in
 id tv_to_sign_up
 id uniform
@@ -1374,6 +1401,7 @@ layout abc_select_dialog_material
 layout abc_simple_dropdown_hint
 layout abc_tooltip
 layout bottom_item_icon_text_layout
+layout brvah_quick_view_load_more
 layout custom_dialog
 layout delegate_bottom
 layout delegate_compass
@@ -1473,6 +1501,10 @@ string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string brvah_load_complete
+string brvah_load_end
+string brvah_load_failed
+string brvah_loading
 string character_counter_content_description
 string character_counter_pattern
 string fab_transformation_scrim_behavior

@@ -1,6 +1,7 @@
 package com.wll.latte.app;
 
 import android.content.Context;
+import android.os.Handler;
 
 import java.util.HashMap;
 
@@ -10,6 +11,7 @@ import java.util.HashMap;
  * @date : 2020-02-14 15:36
  */
 public class Latte {
+
     //初始化Configurator
     public static Configurator init(Context context) {
         getConfigurations().put(ConfigKeys.APPLATION_CONTEXT.name(), context.getApplicationContext());
@@ -36,5 +38,9 @@ public class Latte {
     //Context
     public static Configurator getConfigurator() {
         return Configurator.getInstance();
+    }
+
+    public static Handler getHandler() {
+        return (Handler) getConfigurations(ConfigKeys.HANDLER);
     }
 }

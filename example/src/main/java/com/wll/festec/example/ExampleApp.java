@@ -28,9 +28,9 @@ public class ExampleApp extends Application {
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcMoudle())
-                .withApiHost("http://127.0.0.1/")
-                .withInterceptor(new DebugInterceptor("index", R.raw.test))
-                .withWeChatAppId("")
+                .withApiHost("http://mock.fulingjie.com/mock/data/")
+                .withInterceptor(new DebugInterceptor("test", R.raw.test))
+                .withWeChatAppId("wx2dc450271ada632e")
                 .withWeChatSecret("")
                 .configure();
         //今日头条适配

@@ -14,5 +14,6 @@ public enum ConfigKeys {
     WE_CHAT_APPID,//wxAPPID
     WE_CHAT_APP_SECIET,//
     ACTIVITY,//
+   HANDLER,//
 
 }
