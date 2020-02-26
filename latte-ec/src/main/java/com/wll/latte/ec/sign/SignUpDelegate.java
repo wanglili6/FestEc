@@ -1,9 +1,7 @@
 package com.wll.latte.ec.sign;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -13,15 +11,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.wll.latte.app.Latte;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
 import com.wll.latte.net.RestClient;
 import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
 import com.wll.latte.net.callback.ISuccess;
-import com.wll.latte.util.log.LatteLogger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -31,7 +27,7 @@ import butterknife.OnClick;
  * @description: 注册
  * @date : 2020-02-19 15:34
  */
-public class SignUpDelegate extends LatteDelegaret {
+public class SignUpDelegate extends LatteDelegate {
     @BindView(R2.id.edit_sign_up_name)
     TextInputEditText editSignUpName;
     @BindView(R2.id.edit_sign_up_phone)

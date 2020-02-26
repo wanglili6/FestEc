@@ -5,14 +5,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.wll.latte.R;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 
 /**
  * @author wanglili
  * @description: 每一个页面的fragment
  * @date : 2020-02-24 15:45
  */
-public abstract class BottomItemDelegate extends LatteDelegaret implements View.OnKeyListener {
+public abstract class BottomItemDelegate extends LatteDelegate implements View.OnKeyListener {
     private long mExitTime = 0;
     private static final int EXIT_TIME = 2000;
 

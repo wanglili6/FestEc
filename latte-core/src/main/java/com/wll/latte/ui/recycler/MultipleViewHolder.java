@@ -2,7 +2,8 @@ package com.wll.latte.ui.recycler;
 
 import android.view.View;
 
-import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.chad.library.adapter.base.BaseViewHolder;
+
 
 /**
  * @author wanglili

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -18,6 +19,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tv_index"
+        app:layout_behavior="com.wll.latte.ec.main.index.TranslucentBehavior"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@android:color/transparent"

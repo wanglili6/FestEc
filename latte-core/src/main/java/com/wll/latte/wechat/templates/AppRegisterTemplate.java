@@ -1,11 +1,11 @@
 package com.wll.latte.wechat.templates;
 
 import com.wll.latte.activitys.ProxyActivity;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 
 public class AppRegisterTemplate extends ProxyActivity {
     @Override
-    public LatteDelegaret setRootDelegarete() {
+    public LatteDelegate setRootDelegarete() {
         return null;
     }
 }

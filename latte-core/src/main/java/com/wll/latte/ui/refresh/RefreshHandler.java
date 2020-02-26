@@ -1,5 +1,6 @@
 package com.wll.latte.ui.refresh;
 
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,7 +9,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.wll.latte.app.Latte;
+import com.wll.latte.delegates.LatteDelegate;
 import com.wll.latte.net.RestClient;
 import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
@@ -28,6 +32,13 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener {
     private MultipleRecyclerAdapter mAdapter = null;
     private final DataConverter dataConverter;
 
+    public MultipleRecyclerAdapter getmAdapter() {
+        return mAdapter;
+    }
+
+    public void setmAdapter(MultipleRecyclerAdapter mAdapter) {
+        this.mAdapter = mAdapter;
+    }
 
     //传入layout
     public RefreshHandler(SwipeRefreshLayout swipeRefreshLayout, RecyclerView recyclerView, DataConverter converter, PagingBean pagingBean) {
@@ -76,7 +87,6 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener {
                         mAdapter = MultipleRecyclerAdapter.create(dataConverter.setJsonData(response));
                         RECYCLER_VIEW.setAdapter(mAdapter);
                         BEAN.addIndex();
-
 
                     }
                 })

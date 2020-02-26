@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
-import com.chad.library.adapter.base.listener.GridSpanSizeLookup;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.wll.latte.R;
 import com.wll.latte.app.Latte;
 import com.wll.latte.ui.banner.BannerCreator;
@@ -23,7 +23,7 @@ import java.util.List;
  * @description: RecyclerAdapter
  * @date : 2020-02-26 11:14
  */
-public class MultipleRecyclerAdapter extends BaseMultiItemQuickAdapter<MultipleItemBean, MultipleViewHolder> implements GridSpanSizeLookup, OnItemClickListener {
+public class MultipleRecyclerAdapter extends BaseMultiItemQuickAdapter<MultipleItemBean, MultipleViewHolder> implements BaseQuickAdapter.SpanSizeLookup, OnItemClickListener {
     public MultipleRecyclerAdapter(List<MultipleItemBean> data) {
         super(data);
         init();
@@ -112,21 +112,22 @@ public class MultipleRecyclerAdapter extends BaseMultiItemQuickAdapter<MultipleI
         addItemType(ItemType.TEXT_IMAGE, R.layout.item_multiple_image_text);
         addItemType(ItemType.BANNER, R.layout.item_multiple_banner);
         //设置宽度的监听
-        setGridSpanSizeLookup(this);
+        setSpanSizeLookup(this);
 //        //打开动画
-        setAnimationEnable(true);
+        openLoadAnimation();
 //        //多次执行动画
-        setAnimationFirstOnly(false);
+        isFirstOnly(false);
 
     }
 
-    @Override
-    public int getSpanSize(GridLayoutManager gridLayoutManager, int viewType, int position) {
-        return getData().get(position).getField(MultipleFields.SPAN_SIZE);
-    }
 
     @Override
     public void onItemClick(int position) {
 
+    }
+
+    @Override
+    public int getSpanSize(GridLayoutManager gridLayoutManager, int i) {
+        return getData().get(i).getField(MultipleFields.SPAN_SIZE);
     }
 }

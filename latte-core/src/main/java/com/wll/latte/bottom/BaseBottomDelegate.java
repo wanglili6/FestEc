@@ -15,7 +15,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.wll.latte.R;
 import com.wll.latte.R2;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -29,7 +29,7 @@ import me.yokeyword.fragmentation.SupportFragment;
  * @description: 底部基础设置
  * @date : 2020-02-24 15:41
  */
-public abstract class BaseBottomDelegate extends LatteDelegaret implements View.OnClickListener {
+public abstract class BaseBottomDelegate extends LatteDelegate implements View.OnClickListener {
     @BindView(R2.id.bottom_bar_delegate_container)
     ConstraintLayout bottomBarDelegateContainer;
     @BindView(R2.id.bottom_bar)

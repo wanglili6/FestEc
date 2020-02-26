@@ -1,6 +1,5 @@
 package com.wll.latte.ec.main.index;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,11 +10,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.wll.latte.bottom.BottomItemDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
+import com.wll.latte.ec.main.EcBottomDelegate;
 import com.wll.latte.ui.recycler.BaseDcoration;
+import com.wll.latte.ui.recycler.MultipleRecyclerAdapter;
 import com.wll.latte.ui.refresh.RefreshHandler;
 
 import butterknife.BindView;
@@ -52,9 +55,12 @@ public class IndexDelegate extends BottomItemDelegate {
     private void initRecycleView() {
         final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
         rvIndex.setLayoutManager(gridLayoutManager);
-        rvIndex.addItemDecoration(BaseDcoration.create(ContextCompat.getColor(getContext(),R.color.app_background),5));
+        rvIndex.addItemDecoration(BaseDcoration.create(ContextCompat.getColor(getContext(), R.color.app_background), 5));
+        final EcBottomDelegate ecBottomDelegate = getParentDelegate();
+        rvIndex.addOnItemTouchListener(IndexItemClickListener.create(ecBottomDelegate));
 
     }
+
 
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {

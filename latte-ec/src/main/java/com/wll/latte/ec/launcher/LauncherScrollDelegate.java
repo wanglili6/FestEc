@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.sign.AccountManager;
 import com.wll.latte.ec.sign.IUserChecker;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * @description: 滑动的banner
  * @date : 2020-02-19 10:22
  */
-public class LauncherScrollDelegate extends LatteDelegaret implements OnItemClickListener {
+public class LauncherScrollDelegate extends LatteDelegate implements OnItemClickListener {
     private ConvenientBanner<Integer> mConvenientBanner = null;
     private static ArrayList<Integer> INTEGERS = new ArrayList<>();
 

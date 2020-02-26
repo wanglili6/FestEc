@@ -8,13 +8,15 @@ import androidx.appcompat.app.ActionBar;
 
 import com.wll.latte.activitys.ProxyActivity;
 import com.wll.latte.app.Latte;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 import com.wll.latte.ec.launcher.LauncherDelegate;
 import com.wll.latte.ec.main.EcBottomDelegate;
 import com.wll.latte.ec.sign.ISignListener;
 import com.wll.latte.ec.sign.SignInDelegate;
 import com.wll.latte.ui.launcher.ILauncherListenner;
 import com.wll.latte.ui.launcher.OnLauncherFinishTag;
+
+import qiu.niorgai.StatusBarCompat;
 
 public class ExampleActivity extends ProxyActivity implements ISignListener, ILauncherListenner {
     @Override
@@ -27,10 +29,13 @@ public class ExampleActivity extends ProxyActivity implements ISignListener, ILa
         //加入配置文件
         Latte.getConfigurator().withActivity(this);
 
+        //SDK >= 21时, 取消状态栏的阴影
+        StatusBarCompat.translucentStatusBar(this, true);
+
     }
 
     @Override
-    public LatteDelegaret setRootDelegarete() {
+    public LatteDelegate setRootDelegarete() {
         return new LauncherDelegate();
     }
 

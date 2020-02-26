@@ -9,7 +9,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
 import com.wll.latte.ec.sign.AccountManager;
@@ -32,7 +32,7 @@ import butterknife.OnClick;
  * @description: 倒计时启动图
  * @date : 2020-02-18 23:20
  */
-public class LauncherDelegate extends LatteDelegaret implements ITimerListener {
+public class LauncherDelegate extends LatteDelegate implements ITimerListener {
 
     @BindView(R2.id.tv_launcher_timer)
     AppCompatTextView mTvLauncherTimer;

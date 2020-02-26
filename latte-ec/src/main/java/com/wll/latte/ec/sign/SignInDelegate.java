@@ -12,7 +12,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.joanzapata.iconify.widget.IconTextView;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
 import com.wll.latte.net.RestClient;
@@ -30,7 +30,7 @@ import butterknife.OnClick;
  * @description: 登录
  * @date : 2020-02-19 15:34
  */
-public class SignInDelegate extends LatteDelegaret {
+public class SignInDelegate extends LatteDelegate {
 
 
     @BindView(R2.id.edit_sign_in_email)

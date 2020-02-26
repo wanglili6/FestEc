@@ -7,7 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.wll.festec.R;
-import com.wll.latte.delegates.LatteDelegaret;
+import com.wll.latte.delegates.LatteDelegate;
 import com.wll.latte.net.RestClient;
 import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
@@ -18,7 +18,7 @@ import com.wll.latte.net.callback.ISuccess;
  * @description:
  * @date : 2020-02-16 17:13
  */
-public class ExampleDelegate extends LatteDelegaret {
+public class ExampleDelegate extends LatteDelegate {
 
     @Override
     public Object setLayout() {
