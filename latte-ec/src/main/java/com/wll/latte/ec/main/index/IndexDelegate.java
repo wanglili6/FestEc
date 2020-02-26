@@ -1,11 +1,13 @@
 package com.wll.latte.ec.main.index;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -13,15 +15,8 @@ import com.joanzapata.iconify.widget.IconTextView;
 import com.wll.latte.bottom.BottomItemDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
-import com.wll.latte.net.RestClient;
-import com.wll.latte.net.callback.IError;
-import com.wll.latte.net.callback.IFailure;
-import com.wll.latte.net.callback.ISuccess;
-import com.wll.latte.ui.recycler.MultipleFields;
-import com.wll.latte.ui.recycler.MultipleItemBean;
+import com.wll.latte.ui.recycler.BaseDcoration;
 import com.wll.latte.ui.refresh.RefreshHandler;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 
@@ -50,39 +45,23 @@ public class IndexDelegate extends BottomItemDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-        refreshHandler = new RefreshHandler(srlIndex);
+        refreshHandler = RefreshHandler.create(srlIndex, rvIndex, new IndexDataConverter());
 
-        RestClient.builder()
-                .url("index_data.json")
-                .success(new ISuccess() {
-                    @Override
-                    public void onSuccess(String response) {
-                        //解析数据
-                        IndexDataConverter indexDataConverter = new IndexDataConverter();
-                        indexDataConverter.setJsonData(response);
-                        ArrayList<MultipleItemBean> covert = indexDataConverter.covert();
-                        String imageUrl = covert.get(1).getField(MultipleFields.IMAGE_URL);
-                        Toast.makeText(getContext(), imageUrl, Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .error(new IError() {
-                    @Override
-                    public void onError(int code, String msg) {
+    }
 
-                    }
-                }).failure(new IFailure() {
-            @Override
-            public void onFailure() {
+    private void initRecycleView() {
+        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
+        rvIndex.setLayoutManager(gridLayoutManager);
+        rvIndex.addItemDecoration(BaseDcoration.create(ContextCompat.getColor(getContext(),R.color.app_background),5));
 
-            }
-        }).build().get();
     }
 
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         initRefreshLayput();
-//        refreshHandler.firstPage("index_data.json");
+        initRecycleView();
+        refreshHandler.firstPage("index_data.json");
     }
 
     /**

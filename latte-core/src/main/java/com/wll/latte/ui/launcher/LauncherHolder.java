@@ -10,7 +10,7 @@ import com.bigkoo.convenientbanner.holder.Holder;
 
 /**
  * @author wanglili
- * @description:LauncherHolder
+ * @description: LauncherHolder
  * @date : 2020-02-19 10:40
  */
 public class LauncherHolder implements Holder<Integer> {

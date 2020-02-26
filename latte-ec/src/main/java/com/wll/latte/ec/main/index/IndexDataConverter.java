@@ -31,7 +31,7 @@ public class IndexDataConverter extends DataConverter {
             final JSONArray banners = data.getJSONArray("banners");
             final ArrayList<String> bannerList = new ArrayList<>();
             int type = 0;
-            if (null==imageUrl&&text==null){
+            if (null==imageUrl&&text!=null){
                 type = ItemType.TEXT;
             }else if (null!=imageUrl&&text==null){
                 type = ItemType.IMAGE;

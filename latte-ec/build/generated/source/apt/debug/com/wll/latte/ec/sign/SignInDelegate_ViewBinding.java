@@ -18,11 +18,11 @@ import java.lang.Override;
 public class SignInDelegate_ViewBinding implements Unbinder {
   private SignInDelegate target;
 
-  private View view47a;
+  private View view480;
 
-  private View view533;
+  private View view540;
 
-  private View view4b2;
+  private View view4b9;
 
   @UiThread
   public SignInDelegate_ViewBinding(final SignInDelegate target, View source) {
@@ -33,7 +33,7 @@ public class SignInDelegate_ViewBinding implements Unbinder {
     target.editSignInPwd = Utils.findRequiredViewAsType(source, R.id.edit_sign_in_pwd, "field 'editSignInPwd'", TextInputEditText.class);
     view = Utils.findRequiredView(source, R.id.btn_sign_in, "field 'btnSignIn' and method 'onViewClicked'");
     target.btnSignIn = Utils.castView(view, R.id.btn_sign_in, "field 'btnSignIn'", Button.class);
-    view47a = view;
+    view480 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -42,7 +42,7 @@ public class SignInDelegate_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.tv_to_sign_up, "field 'tvToSignUp' and method 'onViewClicked'");
     target.tvToSignUp = Utils.castView(view, R.id.tv_to_sign_up, "field 'tvToSignUp'", AppCompatTextView.class);
-    view533 = view;
+    view540 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -51,7 +51,7 @@ public class SignInDelegate_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.icon_sign_in_wechat, "field 'iconSignInWechat' and method 'onViewClicked'");
     target.iconSignInWechat = Utils.castView(view, R.id.icon_sign_in_wechat, "field 'iconSignInWechat'", IconTextView.class);
-    view4b2 = view;
+    view4b9 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -73,11 +73,11 @@ public class SignInDelegate_ViewBinding implements Unbinder {
     target.tvToSignUp = null;
     target.iconSignInWechat = null;
 
-    view47a.setOnClickListener(null);
-    view47a = null;
-    view533.setOnClickListener(null);
-    view533 = null;
-    view4b2.setOnClickListener(null);
-    view4b2 = null;
+    view480.setOnClickListener(null);
+    view480 = null;
+    view540.setOnClickListener(null);
+    view540 = null;
+    view4b9.setOnClickListener(null);
+    view4b9 = null;
   }
 }
