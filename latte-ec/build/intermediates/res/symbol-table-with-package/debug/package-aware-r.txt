@@ -621,6 +621,7 @@ color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
 color app_background
+color app_main
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -662,6 +663,7 @@ color highlighted_text_material_dark
 color highlighted_text_material_light
 color hint_foreground_material_dark
 color hint_foreground_material_light
+color item_background
 color link_text_material_dark
 color link_text_material_light
 color material_blue_grey_800
@@ -727,6 +729,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color we_chat_black
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1226,6 +1229,7 @@ id invisible
 id isexpand
 id italic
 id item_touch_helper_previous_elevation
+id iv_section
 id labeled
 id largeLabel
 id left
@@ -1268,7 +1272,10 @@ id radio
 id right
 id right_icon
 id right_side
+id rl_vertical_list_content
+id rv_content_list
 id rv_index
+id rv_vertical_menu_list
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1296,6 +1303,7 @@ id showTitle
 id smallLabel
 id snackbar_action
 id snackbar_text
+id sort_list_container
 id spacer
 id split_action_bar
 id spread
@@ -1345,13 +1353,19 @@ id transition_transform
 id tv_bottom_item
 id tv_index
 id tv_launcher_timer
+id tv_list_content_name
 id tv_prompt
+id tv_section
+id tv_section_header
+id tv_section_more
 id tv_to_sign_in
 id tv_to_sign_up
 id uniform
 id unlabeled
 id up
 id useLogo
+id vertical_list_container
+id view_line
 id view_offset_helper
 id visible
 id withText
@@ -1416,11 +1430,13 @@ layout delegate_compass
 layout delegate_goods_detail
 layout delegate_index
 layout delegate_launcher
+layout delegate_list_content
 layout delegate_shopping_cart
 layout delegate_sign_in
 layout delegate_sign_up
 layout delegate_sort
 layout delegate_user
+layout delegate_vertical_list
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1440,6 +1456,9 @@ layout item_multiple_banner
 layout item_multiple_image
 layout item_multiple_image_text
 layout item_multiple_text
+layout item_section_content
+layout item_section_header
+layout item_vertical_mune_list
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1744,6 +1763,7 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style ClubToolbar
 style Platform_AppCompat
 style Platform_AppCompat_Dialog
 style Platform_AppCompat_Light
@@ -2135,3 +2155,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_focusable android_theme paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_inflatedId android_layout
+xml network_security_config

@@ -2,6 +2,10 @@
 <resources>
     <item name="delegate_container" type="id"/>
     <string name="app_name">latte</string>
+    <style name="ClubToolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
+        <item name="contentInsetEnd">0dp</item>
+    </style>
     <style name="Theme.AppCompat.Translucent">
         <!--去掉标题栏-->
         <item name="android:windowNoTitle">true</item>

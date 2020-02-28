@@ -22,10 +22,6 @@ public class ExampleActivity extends ProxyActivity implements ISignListener, ILa
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = getSupportActionBar();
-        if (null != actionBar) {
-            actionBar.hide();
-        }
         //加入配置文件
         Latte.getConfigurator().withActivity(this);
 
@@ -42,11 +38,13 @@ public class ExampleActivity extends ProxyActivity implements ISignListener, ILa
     @Override
     public void onSignInSuccess() {
         Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+        startWithPop(new EcBottomDelegate());
     }
 
     @Override
     public void onSignUpSuccess() {
         Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
+        startWithPop(new SignInDelegate());
     }
 
     /**

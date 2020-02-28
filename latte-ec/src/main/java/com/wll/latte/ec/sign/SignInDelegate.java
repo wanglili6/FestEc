@@ -99,7 +99,7 @@ public class SignInDelegate extends LatteDelegate {
             //登录
             if (checkForm()) {
                 RestClient.builder()
-                        .url("http://mock.fulingjie.com/mock/data/user_profile.json")
+                        .url("user_profile.json")
                         .params("name", editSignInEmail.getText().toString())
                         .params("password", editSignInPwd.getText().toString())
                         .loader(getContext())

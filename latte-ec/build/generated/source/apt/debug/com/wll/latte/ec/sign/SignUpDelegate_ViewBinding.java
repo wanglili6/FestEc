@@ -17,9 +17,9 @@ import java.lang.Override;
 public class SignUpDelegate_ViewBinding implements Unbinder {
   private SignUpDelegate target;
 
-  private View view481;
+  private View view484;
 
-  private View view53a;
+  private View view546;
 
   @UiThread
   public SignUpDelegate_ViewBinding(final SignUpDelegate target, View source) {
@@ -33,7 +33,7 @@ public class SignUpDelegate_ViewBinding implements Unbinder {
     target.editSignUpRePwd = Utils.findRequiredViewAsType(source, R.id.edit_sign_up_re_pwd, "field 'editSignUpRePwd'", TextInputEditText.class);
     view = Utils.findRequiredView(source, R.id.btn_sign_up, "field 'btnSignUp' and method 'onViewClicked'");
     target.btnSignUp = Utils.castView(view, R.id.btn_sign_up, "field 'btnSignUp'", Button.class);
-    view481 = view;
+    view484 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -42,7 +42,7 @@ public class SignUpDelegate_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.tv_to_sign_in, "field 'tvToSignIn' and method 'onViewClicked'");
     target.tvToSignIn = Utils.castView(view, R.id.tv_to_sign_in, "field 'tvToSignIn'", AppCompatTextView.class);
-    view53a = view;
+    view546 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -66,9 +66,9 @@ public class SignUpDelegate_ViewBinding implements Unbinder {
     target.btnSignUp = null;
     target.tvToSignIn = null;
 
-    view481.setOnClickListener(null);
-    view481 = null;
-    view53a.setOnClickListener(null);
-    view53a = null;
+    view484.setOnClickListener(null);
+    view484 = null;
+    view546.setOnClickListener(null);
+    view546 = null;
   }
 }
