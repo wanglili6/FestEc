@@ -2,16 +2,20 @@ package com.wll.latte.delegates.web.client;
 
 import android.graphics.Bitmap;
 import android.os.Handler;
+import android.webkit.CookieManager;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.wll.latte.app.ConfigKeys;
+import com.wll.latte.app.Latte;
 import com.wll.latte.delegates.web.IPageLoadListenner;
 import com.wll.latte.delegates.web.WebDelegate;
 import com.wll.latte.delegates.web.WebDelegateImpl;
 import com.wll.latte.delegates.web.route.Router;
 import com.wll.latte.ui.loader.LatteLoader;
 import com.wll.latte.util.log.LatteLogger;
+import com.wll.latte.util.storage.LattePreference;
 
 /**
  * @author wanglili
@@ -51,6 +55,7 @@ public class WebViewClientImpl extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
+        syncCookie();
         if (iPageLoadListenner != null) {
             iPageLoadListenner.onLoadEnd();
         }
@@ -62,6 +67,23 @@ public class WebViewClientImpl extends WebViewClient {
         }, 1000);
     }
 
+    /**
+     * 获取浏览器的cookie
+     */
+    private void syncCookie() {
+        CookieManager manager = CookieManager.getInstance();
+        //注意：这里的cookie和api请求的是不一样的，这个cookie在网页中不可见
+        String webHost = (String) Latte.getConfigurations(ConfigKeys.WEB_HOST);
+        if (null != webHost) {
+            String mCookie = manager.getCookie(webHost);
+            if (mCookie != null && !mCookie.isEmpty()) {
+                LattePreference.addCustomAppProfile("cookie", mCookie);
+            }
+
+        }
+
+
+    }
     //    /**
 //     * 判断型号
 //     * @param view

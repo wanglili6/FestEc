@@ -12,6 +12,7 @@ import com.wll.latte.delegates.web.event.TestEvent;
 import com.wll.latte.ec.database.DataBaseManager;
 import com.wll.latte.ec.icon.FontEcModule;
 import com.wll.latte.net.interceptors.DebugInterceptor;
+import com.wll.latte.net.rx.AddCookieInterceptor;
 
 /**
  * @author wanglili
@@ -32,6 +33,8 @@ public class ExampleApp extends Application {
                 .withWeChatSecret("")
                 .withJavascriptInterface("Latte")
                 .withWebEvent("test", new TestEvent())
+                .withInterceptor(new AddCookieInterceptor())    //添加cookie同步拦截器
+                .withWebHost("https://www.baidu.com/")
                 .configure();
         //今日头条适配
 //        AutoSizeConfig.getInstance().getUnitsManager()

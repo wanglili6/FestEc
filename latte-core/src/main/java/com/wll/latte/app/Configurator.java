@@ -75,6 +75,12 @@ public class Configurator {
         LATTE_CONFIGS.put(ConfigKeys.JAVASCRIPT_INTERFACE, name);
         return this;
     }
+
+    //浏览器加载的HOST
+    public Configurator withWebHost(@NonNull String host) {
+        LATTE_CONFIGS.put(ConfigKeys.WEB_HOST, host);
+        return this;
+    }
     //初始化字体图标
     private void initIcons() {
         //是否初始化过

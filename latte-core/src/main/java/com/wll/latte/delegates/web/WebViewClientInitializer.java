@@ -18,10 +18,11 @@ public class WebViewClientInitializer {
     public WebView createWebView(WebView webView) {
         WebView.setWebContentsDebuggingEnabled(true);
 
-        //cookie
+        //cookie 跨域
         final CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            //开启跨域
             cookieManager.setAcceptThirdPartyCookies(webView, true);
         }
         CookieManager.setAcceptFileSchemeCookies(true);
