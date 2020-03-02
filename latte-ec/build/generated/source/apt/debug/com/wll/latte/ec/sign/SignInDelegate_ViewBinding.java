@@ -20,9 +20,9 @@ public class SignInDelegate_ViewBinding implements Unbinder {
 
   private View view624;
 
-  private View view6eb;
+  private View view6f6;
 
-  private View view65c;
+  private View view660;
 
   @UiThread
   public SignInDelegate_ViewBinding(final SignInDelegate target, View source) {
@@ -42,7 +42,7 @@ public class SignInDelegate_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.tv_to_sign_up, "field 'tvToSignUp' and method 'onViewClicked'");
     target.tvToSignUp = Utils.castView(view, R.id.tv_to_sign_up, "field 'tvToSignUp'", AppCompatTextView.class);
-    view6eb = view;
+    view6f6 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -51,7 +51,7 @@ public class SignInDelegate_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.icon_sign_in_wechat, "field 'iconSignInWechat' and method 'onViewClicked'");
     target.iconSignInWechat = Utils.castView(view, R.id.icon_sign_in_wechat, "field 'iconSignInWechat'", IconTextView.class);
-    view65c = view;
+    view660 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -75,9 +75,9 @@ public class SignInDelegate_ViewBinding implements Unbinder {
 
     view624.setOnClickListener(null);
     view624 = null;
-    view6eb.setOnClickListener(null);
-    view6eb = null;
-    view65c.setOnClickListener(null);
-    view65c = null;
+    view6f6.setOnClickListener(null);
+    view6f6 = null;
+    view660.setOnClickListener(null);
+    view660 = null;
   }
 }

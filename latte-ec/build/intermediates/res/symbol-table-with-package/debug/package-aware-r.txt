@@ -1636,9 +1636,14 @@ id icon_bottom_item
 id icon_group
 id icon_index_messages
 id icon_index_scan
+id icon_item_minus
+id icon_item_plus
+id icon_item_shop_cart
+id icon_shop_carr_select_all
 id icon_sign_in_wechat
 id ifRoom
 id image
+id img_item_shop_cart
 id img_multiple
 id img_single
 id info
@@ -1689,10 +1694,12 @@ id radio
 id right
 id right_icon
 id right_side
+id rl_shop_cart_toolbar
 id rl_tool_bar
 id rl_vertical_list_content
 id rv_content_list
 id rv_index
+id rv_shop_cart
 id rv_vertical_menu_list
 id save_image_matrix
 id save_non_transition_alpha
@@ -1771,6 +1778,10 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tv_bottom_item
 id tv_index
+id tv_item_shop_cart_count
+id tv_item_shop_cart_desc
+id tv_item_shop_cart_price
+id tv_item_shop_cart_title
 id tv_launcher_timer
 id tv_list_content_name
 id tv_prompt
@@ -1780,6 +1791,9 @@ id tv_section_more
 id tv_title
 id tv_to_sign_in
 id tv_to_sign_up
+id tv_top_shop_cart_clear
+id tv_top_shop_cart_remove_select
+id tv_top_shop_cart_title
 id uniform
 id unlabeled
 id up
@@ -1879,6 +1893,7 @@ layout item_multiple_image_text
 layout item_multiple_text
 layout item_section_content
 layout item_section_header
+layout item_shop_cart
 layout item_vertical_mune_list
 layout main_title
 layout mtrl_layout_snackbar

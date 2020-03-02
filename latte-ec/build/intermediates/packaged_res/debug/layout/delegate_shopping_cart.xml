@@ -1,11 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     android:orientation="vertical">
-
-    <androidx.appcompat.widget.AppCompatTextView
+    <!--toolbar-->
+    <RelativeLayout
+        android:id="@+id/rl_shop_cart_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="购物车" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:background="@color/app_main">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_top_shop_cart_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="清空"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_16" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_top_shop_cart_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="购物车"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_18"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_top_shop_cart_remove_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="删除"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </RelativeLayout>
+    <!--    内容-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_shop_cart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="8" />
+    <!--    空白占位符-->
+    <ViewStub
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:minHeight="@dimen/dp_50"
+        android:orientation="horizontal" />
+
+    <!--    底部选择-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:minHeight="@dimen/dp_50"
+        android:orientation="horizontal">
+        <!--全选图标模块-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:minHeight="@dimen/dp_50"
+            android:orientation="horizontal">
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/icon_shop_carr_select_all"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="{fa-check-circle}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/sp_16" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="全选"
+                android:textColor="@color/app_main"
+                android:textSize="@dimen/sp_16"
+                tools:ignore="HardcodedText" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <!--合计部分-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:minHeight="@dimen/dp_50"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="合计"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/sp_16"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="¥222.00"
+                android:textColor="@color/app_main"
+                android:textSize="@dimen/sp_18"
+                tools:ignore="HardcodedText" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/app_main"
+            android:gravity="center"
+
+            android:text="结算"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
