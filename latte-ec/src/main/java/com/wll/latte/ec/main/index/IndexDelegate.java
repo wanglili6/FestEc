@@ -2,8 +2,10 @@ package com.wll.latte.ec.main.index;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -23,6 +25,8 @@ import com.wll.latte.ui.refresh.RefreshHandler;
 
 import butterknife.BindView;
 
+import static com.blankj.utilcode.util.BarUtils.getStatusBarHeight;
+
 /**
  * @author wanglili
  * @description: 首页
@@ -40,7 +44,6 @@ public class IndexDelegate extends BottomItemDelegate {
     @BindView(R2.id.tv_index)
     Toolbar tvIndex;
     private RefreshHandler refreshHandler = null;
-
     @Override
     public Object setLayout() {
         return R.layout.delegate_index;
@@ -49,7 +52,8 @@ public class IndexDelegate extends BottomItemDelegate {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
         refreshHandler = RefreshHandler.create(srlIndex, rvIndex, new IndexDataConverter());
-
+        tvIndex.getBackground().mutate().setAlpha(0);
+        tvIndex.setPadding(0, getStatusBarHeight()+10, 0, 40);
     }
 
     private void initRecycleView() {

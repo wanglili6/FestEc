@@ -1,7 +1,5 @@
 package com.wll.latte.ec.main.sort.content;
 
-import com.chad.library.adapter.base.entity.SectionEntity;
-
 /**
  * @author wanglili
  * @description:

@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.ContentFrameLayout;
 
 import com.wll.latte.R;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 
 import me.yokeyword.fragmentation.SupportActivity;
 

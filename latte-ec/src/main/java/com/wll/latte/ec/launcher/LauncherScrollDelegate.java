@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.sign.AccountManager;
 import com.wll.latte.ec.sign.IUserChecker;

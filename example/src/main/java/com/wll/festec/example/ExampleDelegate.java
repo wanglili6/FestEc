@@ -7,7 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.wll.festec.R;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 import com.wll.latte.net.RestClient;
 import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;

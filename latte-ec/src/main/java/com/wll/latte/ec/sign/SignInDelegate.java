@@ -12,7 +12,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.joanzapata.iconify.widget.IconTextView;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
 import com.wll.latte.net.RestClient;

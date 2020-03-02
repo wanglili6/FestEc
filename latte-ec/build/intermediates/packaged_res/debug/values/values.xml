@@ -4,5 +4,6 @@
     <color name="app_main">@android:color/holo_orange_dark</color>
     <color name="item_background">#f1f1f1</color>
     <color name="we_chat_black">#323232</color>
+    <dimen name="header_height">80dp</dimen>
     <string name="app_name">LatteEc</string>
 </resources>

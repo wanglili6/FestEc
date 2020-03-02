@@ -3,8 +3,12 @@ package com.wll.latte.app;
 import android.app.Activity;
 import android.os.Handler;
 
+import androidx.annotation.NonNull;
+
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
+import com.wll.latte.delegates.web.event.Event;
+import com.wll.latte.delegates.web.event.EventManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,7 +64,17 @@ public class Configurator {
         LATTE_CONFIGS.put(ConfigKeys.API_HOST.name(), host);
         return this;
     }
+    //配置web事件
+    public Configurator withWebEvent(@NonNull String name, @NonNull Event event) {
+        final EventManager manager = EventManager.getInstance();
+        manager.addEvent(name, event);
+        return this;
+    }
 
+    public Configurator withJavascriptInterface(@NonNull String name) {
+        LATTE_CONFIGS.put(ConfigKeys.JAVASCRIPT_INTERFACE, name);
+        return this;
+    }
     //初始化字体图标
     private void initIcons() {
         //是否初始化过

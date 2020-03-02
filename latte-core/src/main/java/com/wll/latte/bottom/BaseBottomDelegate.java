@@ -15,7 +15,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.wll.latte.R;
 import com.wll.latte.R2;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

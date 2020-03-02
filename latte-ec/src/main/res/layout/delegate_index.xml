@@ -20,10 +20,10 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tv_index"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:contentInsetStart="0dp"
-        android:background="@android:color/transparent"
         android:gravity="center_vertical"
+        android:background="@color/app_main"
         app:layout_behavior="com.wll.latte.ec.main.index.TranslucentBehavior"
         tools:ignore="MissingConstraints">
 
@@ -41,7 +41,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:paddingRight="10dp"
-                android:text="{fa-bullhorn}"
+                android:text="{icon-scan}"
                 android:textColor="@android:color/white"
                 android:textSize="25sp" />
 
@@ -69,4 +69,5 @@
                 android:textSize="25sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.Toolbar>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

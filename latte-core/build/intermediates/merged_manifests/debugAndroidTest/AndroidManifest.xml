@@ -23,11 +23,22 @@
         android:supportsRtl="true" >
         <uses-library android:name="android.test.runner" />
 
+        <activity
+            android:name="com.blankj.utilcode.util.PermissionUtils$PermissionActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:multiprocess="true"
+            android:theme="@style/ActivityTranslucent"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
         <provider
-            android:name="me.jessyan.autosize.InitProvider"
-            android:authorities="com.wll.latte.test.autosize-init-provider"
+            android:name="androidx.core.content.FileProvider4Util"
+            android:authorities="com.wll.latte.test.utilcode.provider"
             android:exported="false"
-            android:multiprocess="true" />
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/util_code_provider_paths" />
+        </provider>
 
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"

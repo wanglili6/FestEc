@@ -9,7 +9,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
 import com.wll.latte.ec.sign.AccountManager;
@@ -25,6 +25,8 @@ import java.util.Timer;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import static com.blankj.utilcode.util.BarUtils.getStatusBarHeight;
 
 
 /**
@@ -94,7 +96,7 @@ public class LauncherDelegate extends LatteDelegate implements ITimerListener {
             public void run() {
                 if (null != mTvLauncherTimer) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        mTvLauncherTimer.setText(MessageFormat.format("跳过\n{0}s", mCount));
+                        mTvLauncherTimer.setText(MessageFormat.format("跳过{0}s", mCount));
                         mCount--;
                         if (mCount < 0) {
                             if (null != mTimer) {

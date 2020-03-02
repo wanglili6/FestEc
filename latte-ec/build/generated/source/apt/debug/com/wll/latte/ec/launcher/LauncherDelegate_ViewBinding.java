@@ -15,7 +15,7 @@ import java.lang.Override;
 public class LauncherDelegate_ViewBinding implements Unbinder {
   private LauncherDelegate target;
 
-  private View view540;
+  private View view6e3;
 
   @UiThread
   public LauncherDelegate_ViewBinding(final LauncherDelegate target, View source) {
@@ -24,7 +24,7 @@ public class LauncherDelegate_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.tv_launcher_timer, "field 'mTvLauncherTimer' and method 'onViewClicked'");
     target.mTvLauncherTimer = Utils.castView(view, R.id.tv_launcher_timer, "field 'mTvLauncherTimer'", AppCompatTextView.class);
-    view540 = view;
+    view6e3 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -42,7 +42,7 @@ public class LauncherDelegate_ViewBinding implements Unbinder {
 
     target.mTvLauncherTimer = null;
 
-    view540.setOnClickListener(null);
-    view540 = null;
+    view6e3.setOnClickListener(null);
+    view6e3 = null;
   }
 }

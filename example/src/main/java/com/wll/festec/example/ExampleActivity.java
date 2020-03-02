@@ -1,14 +1,15 @@
 package com.wll.festec.example;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
+import androidx.core.content.ContextCompat;
 
 import com.wll.latte.activitys.ProxyActivity;
 import com.wll.latte.app.Latte;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 import com.wll.latte.ec.launcher.LauncherDelegate;
 import com.wll.latte.ec.main.EcBottomDelegate;
 import com.wll.latte.ec.sign.ISignListener;

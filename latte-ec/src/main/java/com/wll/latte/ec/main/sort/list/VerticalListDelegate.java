@@ -2,29 +2,20 @@ package com.wll.latte.ec.main.sort.list;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
-import com.wll.latte.ec.main.EcBottomDelegate;
-import com.wll.latte.ec.main.index.IndexItemClickListener;
 import com.wll.latte.ec.main.sort.SortDelegate;
 import com.wll.latte.net.RestClient;
 import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
 import com.wll.latte.net.callback.ISuccess;
-import com.wll.latte.ui.recycler.BaseDcoration;
 import com.wll.latte.ui.recycler.MultipleItemBean;
-import com.wll.latte.ui.recycler.MultipleRecyclerAdapter;
 
 import java.util.ArrayList;
 

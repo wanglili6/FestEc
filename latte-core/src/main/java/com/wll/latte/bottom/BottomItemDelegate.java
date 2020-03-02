@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.wll.latte.R;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 
 /**
  * @author wanglili

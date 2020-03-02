@@ -1,7 +1,7 @@
 package com.wll.latte.wechat.templates;
 
 import com.wll.latte.activitys.ProxyActivity;
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 
 public class AppRegisterTemplate extends ProxyActivity {
     @Override

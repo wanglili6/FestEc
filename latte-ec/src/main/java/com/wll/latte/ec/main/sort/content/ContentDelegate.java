@@ -7,16 +7,14 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.wll.latte.delegates.LatteDelegate;
+import com.wll.latte.delegates.bottom.LatteDelegate;
 import com.wll.latte.ec.R;
 import com.wll.latte.ec.R2;
 import com.wll.latte.net.RestClient;
 import com.wll.latte.net.callback.IError;
 import com.wll.latte.net.callback.IFailure;
 import com.wll.latte.net.callback.ISuccess;
-import com.wll.latte.ui.recycler.MultipleItemBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;

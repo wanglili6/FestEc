@@ -5,20 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        app:contentInsetStart="0dp"
-        android:layout_height="?actionBarSize">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="@android:color/white"
-            android:background="@android:color/holo_orange_dark"
-            android:text="分类" />
-    </androidx.appcompat.widget.Toolbar>
+   <include layout="@layout/main_title"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:baselineAligned="true"

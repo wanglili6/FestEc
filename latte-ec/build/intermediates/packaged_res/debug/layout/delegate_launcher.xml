@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/launcher_00">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_launcher_timer"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_15"
         android:background="@drawable/border_circle_timer"
         android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="16sp" />
+        android:textColor="@color/we_chat_black"
+        android:textSize="@dimen/sp_14" />
 </RelativeLayout>
