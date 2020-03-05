@@ -659,6 +659,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gary
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color hint_foreground_material_dark
@@ -1639,7 +1640,7 @@ id icon_index_scan
 id icon_item_minus
 id icon_item_plus
 id icon_item_shop_cart
-id icon_shop_carr_select_all
+id icon_shop_cart_select_all
 id icon_sign_in_wechat
 id ifRoom
 id image
@@ -1788,6 +1789,7 @@ id tv_prompt
 id tv_section
 id tv_section_header
 id tv_section_more
+id tv_settlement
 id tv_title
 id tv_to_sign_in
 id tv_to_sign_up

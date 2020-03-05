@@ -3,7 +3,6 @@ package com.wll.latte.ec.main.shoppingcart;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -21,8 +20,10 @@ import com.wll.latte.net.callback.ISuccess;
 import com.wll.latte.ui.recycler.MultipleItemBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 import static com.blankj.utilcode.util.BarUtils.getStatusBarHeight;
 
@@ -40,10 +41,18 @@ public class ShoppingCartDelegate extends BottomItemDelegate {
     AppCompatTextView tvTopShopCartRemoveSelect;
     @BindView(R2.id.rv_shop_cart)
     RecyclerView rvShopCart;
-    @BindView(R2.id.icon_shop_carr_select_all)
+    @BindView(R2.id.icon_shop_cart_select_all)
     IconTextView iconShopCarrSelectAll;
     @BindView(R2.id.rl_shop_cart_toolbar)
     RelativeLayout rlShopCartToolbar;
+    @BindView(R2.id.tv_settlement)
+    AppCompatTextView tvSettlement;
+    private ShopCartAdapter shopCartAdapter;
+
+    //记录当前点击的position,position是从1开始的也就是数据的从1开始的
+    private int mCurrentCount = 0;
+    //获取总的item的数量
+    private int mTotalCount = 0;
 
     @Override
     public Object setLayout() {
@@ -53,7 +62,7 @@ public class ShoppingCartDelegate extends BottomItemDelegate {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
         rlShopCartToolbar.setPadding(0, getStatusBarHeight(), 0, 0);
-
+        iconShopCarrSelectAll.setTag(0);
     }
 
     @Override
@@ -66,7 +75,7 @@ public class ShoppingCartDelegate extends BottomItemDelegate {
                     @Override
                     public void onSuccess(String response) {
                         ArrayList<MultipleItemBean> data = new ShopCartDataConverter().setJsonData(response).covert();
-                        ShopCartAdapter shopCartAdapter = new ShopCartAdapter(data);
+                        shopCartAdapter = new ShopCartAdapter(data);
                         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                         rvShopCart.setLayoutManager(linearLayoutManager);
                         rvShopCart.setAdapter(shopCartAdapter);
@@ -85,5 +94,83 @@ public class ShoppingCartDelegate extends BottomItemDelegate {
                     }
                 }).build().get();
 
+    }
+
+    @OnClick({R2.id.icon_shop_cart_select_all, R2.id.tv_settlement, R2.id.tv_top_shop_cart_remove_select, R2.id.tv_top_shop_cart_clear})
+    public void onViewClicked(View view) {
+        int id = view.getId();
+        if (id == R.id.icon_shop_cart_select_all) {
+            //全选
+            selectAll();
+        } else if (id == R.id.tv_top_shop_cart_remove_select) {
+            //删除
+            removeItem();
+
+        } else if (id == R.id.tv_top_shop_cart_clear) {
+            //清空
+            clearAll();
+        } else if (id == R.id.tv_item_shop_cart_desc) {
+            //结算
+        }
+    }
+
+    /*
+    清空
+     */
+    private void clearAll() {
+        shopCartAdapter.getData().clear();
+        shopCartAdapter.notifyDataSetChanged();
+    }
+
+    /**
+     * 删除
+     */
+    private void removeItem() {
+        List<MultipleItemBean> data = shopCartAdapter.getData();
+        //找到要删除的数据
+        List<MultipleItemBean> deledBeanList = new ArrayList<>();
+        for (MultipleItemBean multipleItemBean : data) {
+            boolean isSelected = multipleItemBean.getField(ShopCartItemFields.IS_SELECTED);
+            if (isSelected) {
+                deledBeanList.add(multipleItemBean);
+            }
+        }
+        //删除要删除的变量
+        for (MultipleItemBean delbean : deledBeanList) {
+            //获取删除的positoon
+            int removePostion;
+            int postion = delbean.getField(ShopCartItemFields.POSITION);
+            if (postion > mCurrentCount - 1) {
+                removePostion = postion - (mTotalCount - mCurrentCount);
+            } else {
+                removePostion = postion;
+            }
+            if (removePostion <= shopCartAdapter.getItemCount()) {
+                // 移除bean
+                shopCartAdapter.remove(removePostion);
+                mCurrentCount = shopCartAdapter.getItemCount();
+                shopCartAdapter.notifyItemRangeChanged(removePostion, shopCartAdapter.getItemCount());
+            }
+
+        }
+    }
+
+    /**
+     * 全选
+     */
+    private void selectAll() {
+        int tag = (int) iconShopCarrSelectAll.getTag();
+        if (tag == 0) {
+            iconShopCarrSelectAll.setTextColor(getContext().getResources().getColor(R.color.app_main));
+            iconShopCarrSelectAll.setTag(1);
+            shopCartAdapter.setIsSelectrdAll(true);
+
+        } else {
+            iconShopCarrSelectAll.setTextColor(getContext().getResources().getColor(R.color.gary));
+            iconShopCarrSelectAll.setTag(0);
+            shopCartAdapter.setIsSelectrdAll(false);
+        }
+        //更新recycleView的状态
+        shopCartAdapter.notifyItemRangeChanged(0, shopCartAdapter.getItemCount());
     }
 }

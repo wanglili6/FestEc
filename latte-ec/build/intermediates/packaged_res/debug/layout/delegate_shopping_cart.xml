@@ -90,14 +90,15 @@
             android:orientation="horizontal">
 
             <com.joanzapata.iconify.widget.IconTextView
-                android:id="@+id/icon_shop_carr_select_all"
+                android:id="@+id/icon_shop_cart_select_all"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="{fa-check-circle}"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="@dimen/sp_16" />
+                android:textSize="@dimen/sp_16"
+                tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="@dimen/dp_0"
@@ -139,6 +140,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_settlement"
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
             android:layout_weight="1"

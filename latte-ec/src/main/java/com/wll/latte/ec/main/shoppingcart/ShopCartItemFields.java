@@ -10,5 +10,7 @@ public enum ShopCartItemFields {
     DESC,
     PRICE,
     COUNT,
+    IS_SELECTED,
+    POSITION,
 
 }
